@@ -1,7 +1,13 @@
-import type { NextPage } from 'next';
+import type { NextPageWithLayout } from 'next';
 
-const Home: NextPage = () => {
+import { Layout } from '@/components/Layouts';
+
+const Home: NextPageWithLayout = () => {
   return <div>Top page です。</div>;
+};
+
+Home.getLayout = (page) => {
+  return <Layout>{page}</Layout>;
 };
 
 export default Home;
