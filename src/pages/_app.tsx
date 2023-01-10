@@ -2,11 +2,13 @@ import '@/styles/base.scss';
 
 import type { AppProps } from 'next/app';
 
+import { Layout } from '@/components/Layouts';
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <Layout>
       <Component {...pageProps} />
-    </>
+    </Layout>
   );
 }
 
