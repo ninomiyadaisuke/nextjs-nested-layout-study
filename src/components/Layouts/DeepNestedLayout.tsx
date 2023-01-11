@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FC, ReactNode } from 'react';
 
+import styles from '@/styles/components/layouts/deepNestLayout.module.scss';
+
 type Props = {
   children: ReactNode;
 };
@@ -10,8 +12,11 @@ const DeepNestedLayout: FC<Props> = (props) => {
   const { children } = props;
   const router = useRouter();
   const { team } = router.query;
+
+  console.log('deepnestLayou');
+
   return (
-    <div>
+    <div className={styles.layout}>
       <header>
         <nav>
           <ul>

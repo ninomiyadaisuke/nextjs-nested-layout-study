@@ -1,20 +1,18 @@
 import type { NextPageWithLayout } from 'next';
-import Link from 'next/link';
-import { useEffect } from 'react';
+import { ReactElement } from 'react';
 
-import { Layout } from '@/components/Layouts';
 import NestedLayout from '@/components/Layouts/NestedLayout';
+import { nestLayout } from '@/components/utils/nestLayout';
+import { HomePageLayout } from '@/pages/index';
 
 const TeamsPage: NextPageWithLayout = () => {
   return <div>This is the Teams landing page</div>;
 };
 
-TeamsPage.getLayout = (page) => {
-  return (
-    <Layout>
-      <NestedLayout>{page}</NestedLayout>
-    </Layout>
-  );
-};
+const getLayout = (page: ReactElement) => <NestedLayout>{page}</NestedLayout>;
+
+export const TeamsPageLayout = nestLayout(HomePageLayout, getLayout);
+
+TeamsPage.getLayout = TeamsPageLayout;
 
 export default TeamsPage;

@@ -1,5 +1,5 @@
 import type { NextPageWithLayout } from 'next';
-import { useEffect } from 'react';
+import { ReactElement, useEffect } from 'react';
 
 import { Layout } from '@/components/Layouts';
 
@@ -11,8 +11,8 @@ const Home: NextPageWithLayout = () => {
   return <div>Top page です。</div>;
 };
 
-Home.getLayout = (page) => {
-  return <Layout>{page}</Layout>;
-};
+export const HomePageLayout = (page: ReactElement) => <Layout>{page}</Layout>;
+
+Home.getLayout = HomePageLayout;
 
 export default Home;
