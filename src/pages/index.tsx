@@ -1,5 +1,5 @@
 import type { NextPageWithLayout } from 'next';
-import { ReactElement, useEffect } from 'react';
+import { ReactElement } from 'react';
 
 import { Layout } from '@/components/Layouts';
 
