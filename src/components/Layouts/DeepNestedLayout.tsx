@@ -4,6 +4,8 @@ import { FC, ReactNode, useEffect } from 'react';
 
 import styles from '@/styles/components/layouts/deepNestLayout.module.scss';
 
+import { Counter } from '../Counter';
+
 type Props = {
   children: ReactNode;
 };
@@ -30,6 +32,9 @@ const DeepNestedLayout: FC<Props> = (props) => {
             </li>
             <li>
               <Link href={`/teams/${team}/fixtures`}>Fixtures</Link>
+            </li>
+            <li>
+              <Counter />
             </li>
           </ul>
         </nav>

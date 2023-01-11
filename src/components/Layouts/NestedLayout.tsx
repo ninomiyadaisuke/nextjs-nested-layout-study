@@ -3,6 +3,8 @@ import { FC, ReactNode, useEffect } from 'react';
 
 import styles from '@/styles/components/layouts/nestedLayout.module.scss';
 
+import { Counter } from '../Counter';
+
 type Props = {
   children: ReactNode;
 };
@@ -30,6 +32,7 @@ const NestedLayout: FC<Props> = (props) => {
             </li>
           </ul>
         </nav>
+        <Counter />
       </div>
       {children}
     </div>
