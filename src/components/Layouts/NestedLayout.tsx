@@ -10,8 +10,8 @@ type Props = {
 const NestedLayout: FC<Props> = (props) => {
   const { children } = props;
   useEffect(() => {
-    console.log('TeamsPageLayout mounted');
-    return () => console.log('TeamsPageLayout unmounted');
+    console.log('NestedLayout mounted');
+    return () => console.log('NestedLayout unmounted');
   }, []);
   return (
     <div className={styles.layout}>

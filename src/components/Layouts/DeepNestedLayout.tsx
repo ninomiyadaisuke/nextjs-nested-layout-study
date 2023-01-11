@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, useEffect } from 'react';
 
 import styles from '@/styles/components/layouts/deepNestLayout.module.scss';
 
@@ -13,8 +13,10 @@ const DeepNestedLayout: FC<Props> = (props) => {
   const router = useRouter();
   const { team } = router.query;
 
-  console.log('deepnestLayou');
-
+  useEffect(() => {
+    console.log('DeepNestedLayout mounted');
+    return () => console.log('DeepNestedLayout unmounted');
+  }, []);
   return (
     <div className={styles.layout}>
       <header>

@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, useEffect } from 'react';
 
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
@@ -9,6 +9,10 @@ type Props = {
 };
 
 const Layout: FC<Props> = (props) => {
+  useEffect(() => {
+    console.log('layout mounted');
+    return () => console.log('layout unmounted');
+  }, []);
   const { children } = props;
   return (
     <div className={styles.layout}>
